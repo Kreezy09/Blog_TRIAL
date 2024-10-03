@@ -1,0 +1,20 @@
+<form (ngSubmit)="onAddPost(f)" #f="ngForm" class="relative justify-start border rounded-md p-6">
+  <div class="flex flex-col gap-y-4">
+    <div class="flex flex-row gap-x-4">
+      <label for="title" class="text-medium text-white font-semibold">Title:</label>
+      <input type="text" id="title" ngModel name="title" required class="border border-black rounded-md" />
+    </div>
+    <div class="flex flex-row gap-x-4">
+      <label for="content" class="text-medium text-white font-semibold">Content:</label>
+      <textarea 
+      id="content" 
+      rows="3" 
+      ngModel 
+      name="content" 
+      required
+      class="border border-black rounded-md"
+      ></textarea>
+    </div>
+  </div>
+  <button type="submit" [disabled]="f.invalid" class="bg-emerald-500 text-white border rounded-md p-1">Add Post</button>
+</form>
